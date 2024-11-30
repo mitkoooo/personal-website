@@ -19,3 +19,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.underline {
+  text-decoration-color: red;
+  text-decoration: underline;
+}
