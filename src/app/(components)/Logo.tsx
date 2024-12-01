@@ -13,7 +13,7 @@ export default function Logo() {
   ) : (
     <Link
       href="/"
-      className={`${logoCSS} hover:bg-formal-grey transition-colors duration-100 rounded-sm`}
+      className={`${logoCSS} hover:bg-formal-grey dark:hover:bg-darkmode-active transition-colors duration-100 rounded-sm`}
     >
       Vadim Mitko
     </Link>

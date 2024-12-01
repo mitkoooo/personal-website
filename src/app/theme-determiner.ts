@@ -1,11 +1,34 @@
 // PRIORITY : LOCAL_STORAGE <-- SYSTEM <-- USER_TOOGLE
 
-// 1. Check whether there is preferred theme in the local storage
+// 1. Check whether the system is set to dark mode
+export const systemTheme = window?.matchMedia("(prefers-color-scheme: dark)")
+  .matches
+  ? "dark"
+  : "light";
 
-// 2. Check whether the system is set to dark mode
+export const handleToggle = (curTheme: "dark" | "light") => {
+  if (localStorage.getItem("theme-data") === systemTheme)
+    localStorage.removeItem("theme-data");
+  else {
+    const newTheme = curTheme === "dark" ? "light" : "dark";
+    localStorage.setItem("theme-data", newTheme);
+    turnOnTheme(newTheme);
+  }
+};
 
-// 3. If not, set light mode on the document
+export const getTheme = (): "dark" | "light" => {
+  // 2. Check whether there is preferred theme in the local storage
+  let theme = localStorage.getItem("theme-data");
 
-// 4. If yes, set dark mode on the document
+  if (null === theme) theme = systemTheme;
 
-// 5. Save the theme setting to the local storage
+  return theme as "dark" | "light";
+};
+
+export const turnOnTheme = (theme: "dark" | "light") => {
+  if (theme === "dark") document.documentElement.classList.add("dark");
+
+  if (theme === "light") document.documentElement.classList.remove("dark");
+};
+
+export const theme = getTheme();
