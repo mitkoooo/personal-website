@@ -5,7 +5,7 @@ export default function Footer() {
         Vadim Mitko (
         <a
           href="mailto: vadim@mitko.me"
-          className="border-b border-formal-grey dark:border-darkmode-active"
+          className="border-b border-formal-grey dark:border-darkmode-active transition-[border-color] hover:border-darkmode-active dark:hover:border-formal-grey"
         >
           vadim@mitko.me
         </a>
@@ -14,7 +14,7 @@ export default function Footer() {
       <a
         href="https://github.com/mitkoooo/personal-website"
         target="_blank"
-        className="border-b border-formal-grey dark:border-darkmode-active"
+        className="border-b border-formal-grey dark:border-darkmode-active transition-[border-color] hover:border-darkmode-active dark:hover:border-formal-grey"
       >
         Source
       </a>

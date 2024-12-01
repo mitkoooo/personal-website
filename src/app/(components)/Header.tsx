@@ -4,19 +4,19 @@ import DarkModeToggle from "./DarkModeToggle";
 
 export default function Header() {
   const LinkCSS =
-    "p-2 hover:bg-formal-grey dark:hover:bg-darkmode-active transition-colors duration-100 rounded-sm";
+    "p-1 hover:bg-formal-grey dark:hover:bg-darkmode-active rounded-sm h-9 text-center select-none transition-[background-color]";
 
   return (
-    <header className="flex items-center justify-between">
+    <header className="flex items-center justify-between h-14">
       <Logo />
-      <nav className="text-sm font-mono flex items-center gap-2">
+      <nav className="text-sm font-mono flex items-center gap-2 h-full">
         <DarkModeToggle />
         <div className="flex gap-5">
-          <Link href="/about" className={LinkCSS}>
+          <Link href="/about" className={`${LinkCSS} flex items-center`}>
             About
           </Link>
           <a
-            className={`${LinkCSS} flex gap-2 items-center`}
+            className={`${LinkCSS} flex gap-2 items-center `}
             href="https://www.linkedin.com/in/vadim-mitko-b021772a1/"
             target="_blank"
           >
@@ -35,19 +35,12 @@ const LinkedInLogo = () => (
     width="14"
     height="14"
     fill="none"
-    viewBox="0 0 14 14"
+    className="fill-current bg-black bg-opacity-85 text-white dark:text-black dark:bg-formal-grey rounded-sm"
   >
     <path
-      fill="#000"
-      fillOpacity=".85"
+      transform="translate(1.5, 1.5)"
       fillRule="evenodd"
-      d="M1.547 13.517h10.829c.854 0 1.547-.672 1.547-1.502V1.502C13.923.672 13.23 0 12.376 0H1.547C.693 0 0 .672 0 1.502v10.513c0 .83.693 1.502 1.547 1.502Z"
-      clipRule="evenodd"
-    />
-    <path
-      fill="#fff"
-      fillRule="evenodd"
-      d="M11.99 11.64H9.922V8.223c0-.936-.366-1.46-1.13-1.46-.83 0-1.265.545-1.265 1.46v3.417h-1.99V5.132h1.991v.876s.599-1.075 2.021-1.075 2.44.843 2.44 2.586v4.12ZM3.161 4.28a1.215 1.215 0 0 1-1.228-1.202c0-.663.55-1.2 1.228-1.2.678 0 1.227.537 1.227 1.2 0 .664-.55 1.201-1.227 1.201Zm-1.029 7.36H4.21V5.132H2.133v6.508Z"
+      d="M10.385 9.881H8.319V6.465c0-.937-.367-1.46-1.13-1.46-.831 0-1.265.544-1.265 1.46V9.88H3.933V3.373h1.99v.877s.6-1.076 2.022-1.076c1.422 0 2.44.843 2.44 2.587v4.12Zm-8.828-7.36C.88 2.52.33 1.983.33 1.32S.88.119 1.557.119c.678 0 1.228.538 1.228 1.2 0 .664-.55 1.202-1.228 1.202ZM.53 9.88h2.076V3.373H.53V9.88Z"
       clipRule="evenodd"
     />
   </svg>
