@@ -32,7 +32,7 @@ const DarkModeToggle = (): React.ReactNode => {
 
   const ToggleCSS = `${
     isManuallyActivated ? "bg-formal-grey dark:bg-darkmode-active" : ""
-  } rounded-sm p-2.5 dark:p-[7px] cursor-pointer`;
+  } rounded-sm p-2.5 dark:p-[8px] cursor-pointer`;
 
   return (
     <>
@@ -65,8 +65,8 @@ const DarkMoonIcon = (
 const MightySunIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="22"
-    height="22"
+    width="20"
+    height="20"
     fill="none"
     viewBox="0 0 18 18"
   >
