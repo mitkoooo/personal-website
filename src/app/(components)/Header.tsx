@@ -7,21 +7,22 @@ export default function Header() {
     "p-1 hover:bg-formal-grey dark:hover:bg-darkmode-active rounded-sm h-9 text-center select-none transition-[background-color]";
 
   return (
-    <header className="flex items-center justify-between h-14">
+    <header className="flex h-14 items-center justify-between">
       <Logo />
-      <nav className="text-sm font-mono flex items-center gap-2 h-full">
+      <nav className="flex h-full items-center gap-2 font-mono text-sm">
         <DarkModeToggle />
         <div className="flex gap-5">
           <Link href="/about" className={`${LinkCSS} flex items-center`}>
             About
           </Link>
           <a
-            className={`${LinkCSS} flex gap-2 items-center `}
+            className={`${LinkCSS} flex items-center gap-2`}
             href="https://www.linkedin.com/in/vadim-mitko-b021772a1/"
             target="_blank"
           >
             <LinkedInLogo />
             Follow
+            <span className="hidden md:block">me</span>
           </a>
         </div>
       </nav>
@@ -35,7 +36,7 @@ const LinkedInLogo = () => (
     width="14"
     height="14"
     fill="none"
-    className="fill-current bg-black bg-opacity-85 text-white dark:text-black dark:bg-formal-grey rounded-sm"
+    className="rounded-sm bg-black bg-opacity-85 fill-current text-white dark:bg-formal-grey dark:text-black"
   >
     <path
       transform="translate(1.5, 1.5)"
@@ -45,3 +46,6 @@ const LinkedInLogo = () => (
     />
   </svg>
 );
+
+// I want more padding on each element. Think about position of elements so it looks good and is in accordance with the interface but with more padding
+// Again, go back to Figma and redact your design
