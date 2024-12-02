@@ -14,7 +14,7 @@ export default function Footer() {
       <a
         href="https://github.com/mitkoooo/personal-website"
         target="_blank"
-        className="border-b border-formal-grey transition-[border-color] hover:border-darkmode-active dark:border-darkmode-active dark:hover:border-formal-grey"
+        className="border-b border-formal-grey border-opacity-10 transition-[border-color] hover:border-darkmode-active dark:border-darkmode-active dark:hover:border-formal-grey"
       >
         Source
       </a>
