@@ -1,20 +1,22 @@
+import ProjectLadder from "./(components)/ProjectLadder";
+
 export default function Home() {
   return (
     <div>
-      {/* <ProjectLadder className="mt-48 font-mono">
-        <ProjectLadder.Project className="ml-60">
-          Component-market
+      <ProjectLadder className="mt-48 font-mono">
+        {/* <ProjectLadder.Project projectId="lemon-icedtea" className="ml-60">
+          
+        </ProjectLadder.Project> */}
+        <ProjectLadder.Project projectId="" className="ml-48">
+          In progress...
         </ProjectLadder.Project>
-        <ProjectLadder.Project className="ml-40">
+        <ProjectLadder.Project projectId="personal-website" className="ml-24">
           Personal Website
         </ProjectLadder.Project>
-        <ProjectLadder.Project className="ml-20">
-          Lemon IcedTea
+        <ProjectLadder.Project projectId="component-market" className="mr-0">
+          Component-market
         </ProjectLadder.Project>
-        <ProjectLadder.Project className="mr-0">
-          Lemon IcedTea
-        </ProjectLadder.Project>
-      </ProjectLadder> */}
+      </ProjectLadder>
     </div>
   );
 }
