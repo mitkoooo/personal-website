@@ -13,7 +13,7 @@ const DarkModeToggle = (): React.ReactNode => {
   const [isHovered, setIsHovered] = useState(false);
 
   const [isManuallyActivated, setIsManuallyActivated] = useState(
-    localStorage.getItem("theme-data") !== null
+    localStorage.getItem("theme-data") !== null,
   );
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const DarkModeToggle = (): React.ReactNode => {
 
   return (
     <>
-      <span className="hidden md:block text-xs">
+      <span className="hidden text-xs md:block md:text-sm">
         {isHovered && (isManuallyActivated ? darkModeState : "system")}
       </span>
       <span

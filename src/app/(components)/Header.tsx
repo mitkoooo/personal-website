@@ -4,14 +4,14 @@ import DarkModeToggle from "./DarkModeToggle";
 
 export default function Header() {
   const LinkCSS =
-    "p-1 hover:bg-formal-grey dark:hover:bg-darkmode-active rounded-sm h-9 text-center select-none transition-[background-color]";
+    "p-2 hover:bg-formal-grey dark:hover:bg-darkmode-active rounded-sm h-18 text-center select-none transition-[background-color]";
 
   return (
     <header className="flex h-14 items-center justify-between">
       <Logo />
-      <nav className="flex h-full items-center gap-2 font-mono text-sm">
+      <nav className="flex h-full items-center gap-2 font-mono text-sm md:gap-7">
         <DarkModeToggle />
-        <div className="flex gap-5">
+        <div className="flex gap-5 md:gap-10">
           <Link href="/about" className={`${LinkCSS} flex items-center`}>
             About
           </Link>
