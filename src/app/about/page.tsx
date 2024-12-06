@@ -8,6 +8,8 @@ export default function About() {
       <h1 className={titleCSS}>About</h1>
       <div className="relative mx-auto my-8 flex h-[108px] w-[108px]">
         <Image
+          quality={50}
+          loading="lazy"
           className="rounded-full grayscale"
           alt="Vadim Mitko"
           src="/vadimmitko.jpeg"
