@@ -1,6 +1,9 @@
+"use client";
+
 // PRIORITY : LOCAL_STORAGE <-- SYSTEM <-- USER_TOOGLE
 
 // 1. Check whether the system is set to dark mode
+
 export const systemTheme = window?.matchMedia("(prefers-color-scheme: dark)")
   .matches
   ? "dark"
