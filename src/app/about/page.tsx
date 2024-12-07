@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ProfileImage from "../(components)/ProfileImage";
 
 export default function About() {
   const titleCSS = "text-2xl font-semibold";
@@ -6,16 +6,11 @@ export default function About() {
   return (
     <div className="mt-8 px-2">
       <h1 className={titleCSS}>About</h1>
-      <div className="relative mx-auto my-8 flex h-[108px] w-[108px]">
-        <Image
-          quality={50}
-          loading="lazy"
-          className="rounded-full grayscale"
-          alt="Vadim Mitko"
-          src="/vadimmitko.jpeg"
-          fill
-        />
-      </div>
+      <ProfileImage
+        className="relative mx-auto my-8 flex h-[108px] w-[108px]"
+        src="/vadimmitko.jpeg"
+        alt="Vadim Mitko"
+      />
       <div className="flex flex-col gap-8">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
