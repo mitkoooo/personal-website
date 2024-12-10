@@ -5,11 +5,12 @@ import {
   handleToggle,
   systemTheme,
   theme,
+  themeTypes,
   turnOnTheme,
 } from "../theme-determiner";
 
-const DarkModeToggle = (): React.ReactNode => {
-  const [darkModeState, setDarkModeState] = useState(theme);
+const ThemeToggle = (): React.ReactNode => {
+  const [currentTheme, setCurrentTheme] = useState<themeTypes>(theme);
   const [isHovered, setIsHovered] = useState(false);
 
   const [isManuallyActivated, setIsManuallyActivated] = useState(
@@ -17,16 +18,16 @@ const DarkModeToggle = (): React.ReactNode => {
   );
 
   useEffect(() => {
-    turnOnTheme(darkModeState);
-  }, [darkModeState]);
+    turnOnTheme(currentTheme);
+  }, [currentTheme]);
 
   const handleClick = () => {
     // Sync application state with the current theme
     if (localStorage.getItem("theme-data") !== systemTheme)
-      setDarkModeState((state) => (state === "dark" ? "light" : "dark"));
+      setCurrentTheme((state) => (state === "dark" ? "light" : "dark"));
 
     // Use the toggle function to determine the mode
-    handleToggle(darkModeState);
+    handleToggle(currentTheme);
 
     setIsManuallyActivated(localStorage.getItem("theme-data") !== null);
   };
@@ -42,7 +43,7 @@ const DarkModeToggle = (): React.ReactNode => {
   return (
     <>
       <span className="hidden text-xs md:block md:text-sm">
-        {isHovered && (isManuallyActivated ? darkModeState : "system")}
+        {isHovered && (isManuallyActivated ? currentTheme : "system")}
       </span>
       <span
         className={`${ToggleCSS}`}
@@ -50,13 +51,13 @@ const DarkModeToggle = (): React.ReactNode => {
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
       >
-        {darkModeState === "dark" ? MightySunIcon : DarkMoonIcon}
+        {currentTheme === "dark" ? MightySunIcon : DarkMoonIcon}
       </span>
     </>
   );
 };
 
-export default DarkModeToggle;
+export default ThemeToggle;
 
 const DarkMoonIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">

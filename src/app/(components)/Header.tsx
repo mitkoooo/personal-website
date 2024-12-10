@@ -1,6 +1,6 @@
 import Logo from "@/app/(components)/Logo";
 import Link from "next/link";
-import DarkModeToggle from "./DarkModeToggle";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const LinkCSS =
@@ -10,7 +10,7 @@ export default function Header() {
     <header className="flex h-14 items-center justify-between">
       <Logo />
       <nav className="flex h-full items-center gap-2 font-mono text-sm md:gap-7">
-        <DarkModeToggle />
+        <ThemeToggle />
         <div className="flex gap-5 md:gap-10">
           <Link
             prefetch

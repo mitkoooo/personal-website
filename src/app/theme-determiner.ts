@@ -4,16 +4,20 @@
 
 // 1. Check whether the system is set to dark mode
 
+export type themeTypes = "dark" | "light" | null;
+
 export const systemTheme = window?.matchMedia("(prefers-color-scheme: dark)")
   .matches
   ? "dark"
   : "light";
 
-export const handleToggle = (curTheme: "dark" | "light") => {
+export const handleToggle = (currentTheme: themeTypes) => {
+  console.log(localStorage.getItem("theme-data"), systemTheme);
+
   if (localStorage.getItem("theme-data") === systemTheme)
     localStorage.removeItem("theme-data");
   else {
-    const newTheme = curTheme === "dark" ? "light" : "dark";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
     localStorage.setItem("theme-data", newTheme);
     turnOnTheme(newTheme);
   }
@@ -28,10 +32,26 @@ export const getTheme = (): "dark" | "light" => {
   return theme as "dark" | "light";
 };
 
-export const turnOnTheme = (theme: "dark" | "light") => {
+export const turnOnTheme = (theme: themeTypes) => {
+  const contentColor = theme === "dark" ? "#282828" : "#ffff";
+
+  // Smooth out theme switch
+  document.documentElement.classList.add("pause-transitions");
+
+  // Switch theme
   if (theme === "dark") document.documentElement.classList.add("dark");
 
   if (theme === "light") document.documentElement.classList.remove("dark");
+
+  // Add information about the content in the header
+  document.head
+    .querySelector("meta[name=theme-color]")
+    ?.setAttribute("content", contentColor);
+
+  // Return the transitions back
+  requestAnimationFrame(() => {
+    document.documentElement.classList.remove("pause-transitions");
+  });
 };
 
 export const theme = getTheme();
