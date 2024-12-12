@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
-    "@next/mdx": "^15.0.4",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.1.0",
+    "@tailwindcss/typography": "^0.5.15",
     "@types/mdx": "^2.0.13",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
