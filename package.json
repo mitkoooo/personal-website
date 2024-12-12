@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "packageManager": "npm@10.5.2",
+  "overrides": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
@@ -29,9 +34,5 @@
     "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  },
-  "overrides": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
   }
 }
