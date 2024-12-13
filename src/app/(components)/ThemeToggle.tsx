@@ -1,39 +1,55 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import {
-  handleToggle,
-  systemTheme,
-  theme,
-  themeTypes,
-  turnOnTheme,
-} from "../theme-determiner";
+import { useCallback, useEffect, useState } from "react";
+import themeSetter from "../theme-setter";
 
 const ThemeToggle = (): React.ReactNode => {
-  const [currentTheme, setCurrentTheme] = useState<themeTypes>(theme);
+  const [systemTheme, setSystemTheme] = useState<string | null>(null);
+  const [currentTheme, setCurrentTheme] = useState<string | null>(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  const [isManuallyActivated, setIsManuallyActivated] = useState(
-    localStorage.getItem("theme-data") !== null,
-  );
+  const [isManuallyActivated, setIsManuallyActivated] = useState(false);
+
+  const onStorageChange = useCallback(() => {
+    const newTheme = themeSetter(systemTheme);
+    setCurrentTheme(newTheme);
+  }, [setCurrentTheme, systemTheme]);
 
   useEffect(() => {
-    turnOnTheme(currentTheme);
+    const systemTheme = window?.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+    setSystemTheme(systemTheme);
+
+    const newTheme = themeSetter(systemTheme);
+
+    setCurrentTheme(newTheme);
+
+    setIsManuallyActivated(localStorage.getItem("theme-data") !== null);
   }, [currentTheme]);
+
+  useEffect(() => {
+    window.addEventListener("storage", onStorageChange);
+
+    return window.removeEventListener("storage", onStorageChange);
+  }, [onStorageChange]);
 
   const handleClick = () => {
     // Sync application state with the current theme
     if (localStorage.getItem("theme-data") !== systemTheme)
-      setCurrentTheme((state) => (state === "dark" ? "light" : "dark"));
+      setCurrentTheme(themeSetter(systemTheme));
 
-    // Use the toggle function to determine the mode
-    handleToggle(currentTheme);
+    if (localStorage.getItem("theme-data") === systemTheme)
+      localStorage.removeItem("theme-data");
+    else {
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      localStorage.setItem("theme-data", newTheme);
+      themeSetter(systemTheme);
+      setCurrentTheme(newTheme);
+    }
 
     setIsManuallyActivated(localStorage.getItem("theme-data") !== null);
-  };
-
-  const handleHover = () => {
-    setIsHovered((state) => !state);
   };
 
   const ToggleCSS = `${
@@ -48,8 +64,8 @@ const ThemeToggle = (): React.ReactNode => {
       <span
         className={`${ToggleCSS}`}
         onClick={handleClick}
-        onMouseEnter={handleHover}
-        onMouseLeave={handleHover}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         {currentTheme === "dark" ? MightySunIcon : DarkMoonIcon}
       </span>
