@@ -32,7 +32,7 @@ export default function RootLayout({
       className={`${roboto.className} ${robotoMono.className} antialiased`}
       suppressHydrationWarning={true}
     >
-      <body className="mx-5 mt-3 max-w-[90%] bg-white text-black text-opacity-85 md:mx-20 lg:mx-60 dark:bg-darkmode-dark dark:text-formal-grey">
+      <body className="mx-auto mt-3 max-w-[90%] bg-white text-black text-opacity-85 md:max-w-[70%] dark:bg-darkmode-dark dark:text-formal-grey">
         <main className="mb-24 min-h-[100dvh]">
           <Header />
           {children}
