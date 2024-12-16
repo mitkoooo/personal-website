@@ -1,8 +1,9 @@
 import ProfileImage from "@/app/(components)/ProfileImage";
+import Li from "@/app/(components)/Li";
 
 <h1 className="mb-4 text-2xl font-semibold">About</h1>
 
-<div className="flex flex-col items-center justify-start gap-5 md:flex-row-reverse md:justify-between text-left">
+<div className="flex flex-col items-center gap-5 justify-start md:flex-row-reverse md:justify-between text-left">
 
 <ProfileImage
   className="relative mx-auto my-auto mb-2 h-[140px] w-[140px] md:min-h-[164px] md:min-w-[164px]"
@@ -10,28 +11,24 @@ import ProfileImage from "@/app/(components)/ProfileImage";
   alt="Vadim Mitko"
 />
 
-<div className="flex flex-col gap-5">
-
 I&apos;m Vadim Mitko, a Software Engineer experienced in Java,
 TypeScript, and Python. I&apos;m an undergraduate student at the
-University of York. Currently, I&apos;m learning Go.
-
+University of York. Currently, I&apos;m learning Go.\
+\
 My working and coding style focuses on keeping things maintainable,
 efficient, and clear. I also prioritize effective communication to
 ensure smooth collaboration with my team.
 
 </div>
-
-</div>
-
+\
 In my free time, I enjoy programming projects and playing mahjong.
 
-<h1 className="mb-5 mt-8 text-2xl font-semibold">Technical Achievements</h1>
+<h1 className="mb-4 mt-8 text-2xl font-semibold">Technical Contributions</h1>
 
-    <ul className="flex flex-col gap-4 list-none ">
-      <li className="before:content-['\2014'] dark:before:text-formal-grey before:mr-2">Finished 150+ hours of advanced React courses.</li>
-      <li className="before:content-['\2014'] dark:before:text-formal-grey before:mr-2">Co-designed _York-it!_ app's layout, a University-based project.</li>
-      <li className="before:content-['\2014'] dark:before:text-formal-grey before:mr-2">Developed _component-market_, my first website project, which showcases custom React components.</li>
-      <li className="before:content-['\2014'] dark:before:text-formal-grey before:mr-2">Regularly code reviewed _UniSim_, a University-based Java game project.</li>
-      <li className="before:content-['\2014'] dark:before:text-formal-grey before:mr-2">Developed and maintained unit tests in _UniSim_.</li>
+    <ul>
+      <Li>Finished 150+ hours of advanced React courses</Li>\
+      <Li>Co-designed _York-it!_ app's layout, a University-based project.</Li>\
+      <Li>Developed _component-market_, my first website project, which showcases custom React components.</Li>\
+      <Li>Regularly code reviewed _UniSim_, a University-based Java game project.</Li>\
+      <Li>Developed and maintained unit tests in _UniSim_.</Li>
     </ul>
