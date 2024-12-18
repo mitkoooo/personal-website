@@ -4,10 +4,11 @@ export default function Home() {
   return (
     <div>
       <ProjectLadder className="mx-auto mt-48 max-w-[500px] overflow-hidden font-mono md:max-w-[650px]">
-        {/* <ProjectLadder.Project projectId="lemon-icedtea" className="ml-60">
-          
-        </ProjectLadder.Project> */}
-        <ProjectLadder.Project projectId="" className="ml-[52%]">
+        <ProjectLadder.Project
+          projectId=""
+          className="ml-[52%]"
+          isClickable={false}
+        >
           In progress...
         </ProjectLadder.Project>
         <ProjectLadder.Project
