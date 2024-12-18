@@ -23,6 +23,3 @@ export default function Home() {
     </div>
   );
 }
-
-// TODO list
-//  TODO Go back to figma and fix box sizes. They must be equal to each other and everything should look pretty!
