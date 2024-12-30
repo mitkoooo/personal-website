@@ -17,8 +17,14 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "Vadim Mitko",
-  description: "I am a software engineer based in York, UK. ",
+  description: "I am a software engineer based in York, UK.",
   metadataBase: new URL("https://vadimmitko.vercel.app"),
+  openGraph: {
+    siteName: "Vadim Mitko's personal website",
+    title: "Vadim Mitko's personal website",
+    description: "I am a software engineer based in York, UK.",
+    url: new URL("https://vadimmitko.vercel.app"),
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +38,7 @@ export default function RootLayout({
       className={`${roboto.className} ${robotoMono.className} antialiased`}
       suppressHydrationWarning={true}
     >
-      <body className="mx-auto mt-3 max-w-[90%] bg-white text-black text-opacity-85 md:max-w-[70%] lg:max-w-[55%] dark:bg-darkmode-dark dark:text-formal-grey">
+      <body className="mx-auto mt-3 max-w-[90%] bg-white text-black text-opacity-85 lg:max-w-[800px] dark:bg-darkmode-dark dark:text-formal-grey">
         <main className="mb-24 min-h-screen">
           <Header />
           {children}

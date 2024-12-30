@@ -1,11 +1,12 @@
 "use client";
 
+import MarkdownWrapper from "@/app/(components)/MarkdownWrapper";
 import ComponentMarket from "@/app/markdown/component-market.mdx";
 
 export default function Project() {
   return (
-    <div className="mt-8 px-2 text-base">
+    <MarkdownWrapper>
       <ComponentMarket />
-    </div>
+    </MarkdownWrapper>
   );
 }

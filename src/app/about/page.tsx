@@ -1,11 +1,12 @@
 "use client";
 
 import About from "@/app/markdown/about.mdx";
+import MarkdownWrapper from "../(components)/MarkdownWrapper";
 
 export default function AboutPage() {
   return (
-    <div className="mt-8 px-2 text-base">
+    <MarkdownWrapper>
       <About />
-    </div>
+    </MarkdownWrapper>
   );
 }
