@@ -1,21 +1,5 @@
 "use client";
 
-// PRIORITY : LOCAL_STORAGE <-- SYSTEM <-- USER_TOOGLE
-
-// 1. Check whether the system is set to dark mode
-
-// export const handleToggle = (currentTheme: Theme, systemTheme: Theme) => {
-//   console.log(localStorage.getItem("theme-data"), systemTheme);
-
-//   if (localStorage.getItem("theme-data") === systemTheme)
-//     localStorage.removeItem("theme-data");
-//   else {
-//     const newTheme = currentTheme === "dark" ? "light" : "dark";
-//     localStorage.setItem("theme-data", newTheme);
-//     turnOnTheme(newTheme);
-//   }
-// };
-
 export default function themeSetter(systemTheme: string | null) {
   let theme = localStorage.getItem("theme-data");
 
