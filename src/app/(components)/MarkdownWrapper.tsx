@@ -5,7 +5,7 @@ type MarkdownWrapperProps = {
 const MarkdownWrapper = ({
   children,
 }: MarkdownWrapperProps): React.JSX.Element => (
-  <div className="mt-8 px-2 text-base">{children}</div>
+  <div className="mt-4 px-2 text-base">{children}</div>
 );
 
 export default MarkdownWrapper;
