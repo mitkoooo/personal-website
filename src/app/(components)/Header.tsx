@@ -12,11 +12,7 @@ export default function Header() {
       <nav className="flex h-full items-center gap-2 font-mono text-sm md:gap-7">
         <ThemeToggle />
         <div className="flex gap-5 md:gap-10">
-          <Link
-            prefetch
-            href="/about"
-            className={`${LinkCSS} flex items-center`}
-          >
+          <Link href="/about" className={`${LinkCSS} flex items-center`}>
             About
           </Link>
           <a

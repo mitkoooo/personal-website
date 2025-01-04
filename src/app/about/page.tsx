@@ -1,12 +1,15 @@
-"use client";
-
 import About from "@/app/markdown/about.mdx";
-import MarkdownWrapper from "../(components)/MarkdownWrapper";
+import MdxLayout from "../(components)/mdx-layout";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Vadim Mitko | About",
+};
 
 export default function AboutPage() {
   return (
-    <MarkdownWrapper>
+    <MdxLayout>
       <About />
-    </MarkdownWrapper>
+    </MdxLayout>
   );
 }

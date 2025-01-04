@@ -15,9 +15,9 @@ export default function Home() {
           projectId="personal-website"
           className="ml-[26%]"
         >
-          Personal Website
+          Personal website
         </ProjectLadder.Project>
-        <ProjectLadder.Project projectId="component-market" className="">
+        <ProjectLadder.Project projectId="component-market">
           Component-market
         </ProjectLadder.Project>
       </ProjectLadder>

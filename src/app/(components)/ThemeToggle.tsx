@@ -13,7 +13,7 @@ const ThemeToggle = (): React.ReactNode => {
   const onStorageChange = useCallback(() => {
     const newTheme = themeSetter(systemTheme);
     setCurrentTheme(newTheme);
-  }, [setCurrentTheme, systemTheme]);
+  }, [systemTheme]);
 
   useEffect(() => {
     const systemTheme = window?.matchMedia("(prefers-color-scheme: dark)")

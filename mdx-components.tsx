@@ -1,10 +1,9 @@
 import type { MDXComponents } from "mdx/types";
+import Li from "@/app/(components)/Li";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    ul: ({ children }) => (
-      <ul className="my-5 list-inside list-none">{children}</ul>
-    ),
+    li: ({ children }) => <Li>{children}</Li>,
     ...components,
   };
 }

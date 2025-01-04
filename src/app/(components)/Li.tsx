@@ -1,10 +1,12 @@
+import { ReactElement } from "react";
+
 type LiProps = {
-  children: string;
+  children: React.ReactNode;
   className?: string;
 }; /* use `interface` if exporting so that consumers can extend */
 
-const Li = ({ children }: LiProps): React.JSX.Element => (
-  <li className="before:mr-2 before:content-['\2014'] dark:before:text-formal-grey">
+const Li = ({ children }: LiProps): ReactElement => (
+  <li className="my-2 list-inside before:mr-2 before:content-['\2014'] dark:before:text-formal-grey">
     {children}
   </li>
 );

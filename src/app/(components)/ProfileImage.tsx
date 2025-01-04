@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
 
 type ProfileImageProps = {
   className?: string;
@@ -15,25 +12,19 @@ const ProfileImage = ({
   src,
   alt,
 }: ProfileImageProps): React.JSX.Element => {
-  const [isHover, setIsHover] = useState(false);
-
-  const onHover = () => {
-    setIsHover((prev) => !prev);
-  };
-
   return (
     <a
       href="https://www.linkedin.com/in/vadim-mitko-b021772a1/"
       target="_blank"
       className={className}
-      onMouseEnter={onHover}
-      onMouseLeave={onHover}
     >
       <Image
-        className={`cursor-pointer rounded-full ${isHover ? "" : "grayscale"}`}
+        className="cursor-pointer rounded-full grayscale hover:grayscale-0"
         alt={alt}
         src={src}
         fill
+        unoptimized
+        priority
       />
     </a>
   );
