@@ -7,7 +7,7 @@ export default function Header() {
     "p-2 hover:bg-formal-grey dark:hover:bg-darkmode-active rounded-sm h-18 text-center select-none transition-[background-color]";
 
   return (
-    <header className="flex h-14 items-center justify-between">
+    <header className="mt-3 flex h-14 items-center justify-between">
       <Logo />
       <nav className="flex h-full items-center gap-2 font-mono text-sm md:gap-7">
         <ThemeToggle />

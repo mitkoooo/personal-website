@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mb-3 flex items-center justify-between p-2 font-mono text-xs tracking-wider text-black dark:text-formal-grey">
+    <footer className="mb-3 mt-auto flex justify-between p-2 font-mono text-xs tracking-wider text-black dark:text-formal-grey">
       <span>
         Vadim Mitko (
         <a

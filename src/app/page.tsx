@@ -1,4 +1,9 @@
+import { Metadata } from "next";
 import ProjectLadder from "./(components)/ProjectLadder";
+
+export const metadata: Metadata = {
+  description: "Home page",
+};
 
 export default function Home() {
   return (

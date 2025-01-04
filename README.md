@@ -1,3 +1,3 @@
 # personal-website
 
-This repo contains source code for my personal website which describes who I am and what I do
+This website uses Next-js app router. Each page is separated into its own folder
