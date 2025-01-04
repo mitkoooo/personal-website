@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${roboto.className} ${robotoMono.className} antialiased`}
+      className={`${roboto.className} ${robotoMono.className} overflow-y-scroll antialiased`}
     >
       <body className="mx-auto flex min-h-[100dvh] max-w-[90%] flex-col bg-white text-black text-opacity-85 md:max-w-[700px] dark:bg-darkmode-dark dark:text-formal-grey">
         <main>
