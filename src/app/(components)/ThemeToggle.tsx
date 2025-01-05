@@ -54,7 +54,7 @@ const ThemeToggle = (): React.ReactNode => {
 
   const ToggleCSS = `${
     isManuallyActivated ? "bg-formal-grey dark:bg-darkmode-active" : ""
-  } rounded-sm p-2.5 dark:p-[8px] cursor-pointer`;
+  } rounded-sm p-2.5 dark:p-[8px] cursor-pointer select-none`;
 
   return (
     <>
