@@ -1,0 +1,28 @@
+import Image from "next/image";
+
+<h1 className="mb-4 text-2xl font-semibold">Stock Exchange Simulator</h1>
+
+Stock exchange simulator is a full-stack interactive web application that allows you to buy/sell shares and track your portfolio statistics.
+I have written this application from scratch, and at first, it was just a command-line interface where you could only place orders without
+anybody buying your orders. However, since then, I have greatly expanded this project's scope and added both market maker bots and retail bots.
+
+<Image
+  alt="landing-page"
+  src={"/stock-exchange-sim.png"}
+  width={500}
+  height={400}
+  className="mx-auto mt-8 items-center justify-center"
+/>
+<div className="mb-8 mt-2 text-center font-light">
+  _Stock Exchange Simulator UI_
+</div>
+
+The stock exchange simulator consists of the engine, the backend router, and the frontend UI. The engine is written in Python and is 
+responsible for order creation, order handling (via Broker class), and order scheduling into appropriate queues inside the engine.
+The order books were modeled as sorted maps, with each mapping defining the order's limit price and its price level (its own FIFO queue).
+The engine is asynchronous, meaning it handles concurrency issues and ensures there is no race condition in the program.
+Backend is also written in Python (FastAPI) for simplicity and close integration with the engine.\
+\
+The frontend UI is written using React and Typescript. 
+Internal state management uses Vite, Tanstack Query, Tanstack Table, Zustand, and Tanstack Router for navigation.
+
