@@ -17,13 +17,13 @@ export default function Home() {
           In progress...
         </ProjectLadder.Project>
         <ProjectLadder.Project
-          projectId="personal-website"
+          projectId="stock-exchange-sim"
           className="ml-[26%]"
         >
-          Personal website
+          Stock Exchange Simulator
         </ProjectLadder.Project>
-        <ProjectLadder.Project projectId="component-market">
-          Component-market
+        <ProjectLadder.Project projectId="personal-website">
+          Personal website
         </ProjectLadder.Project>
       </ProjectLadder>
     </div>
