@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   weight: "400",
@@ -37,6 +38,7 @@ export default function RootLayout({
       lang="en"
       className={`${roboto.className} ${robotoMono.className} overflow-y-scroll antialiased`}
     >
+      <Analytics />
       <body className="mx-auto flex min-h-[100dvh] max-w-[90%] flex-col bg-white text-black text-opacity-85 md:max-w-[700px] dark:bg-darkmode-dark dark:text-formal-grey">
         <main>
           <Header />
