@@ -1,11 +1,14 @@
 "use client";
 
-export default function themeSetter(systemTheme: string | null) {
-  let theme = localStorage.getItem("theme-data");
+import { Theme } from "../types/theme";
+
+export default function applyTheme(systemTheme: Theme) {
+  let theme = localStorage.getItem("theme-data") as Theme;
 
   if (null === theme) theme = systemTheme;
 
   const contentColor = theme === "dark" ? "#282828" : "#ffff";
+
   document.documentElement.classList.add("pause-transitions");
 
   // Switch theme
