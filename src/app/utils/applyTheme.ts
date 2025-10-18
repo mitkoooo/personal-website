@@ -2,10 +2,19 @@
 
 import { Theme } from "../types/theme";
 
-export default function applyTheme(systemTheme: Theme) {
-  let theme = localStorage.getItem("theme-data") as Theme;
+export default function applyTheme(systemTheme: Theme): Theme {
+  const storageTheme = localStorage.getItem("theme-data") as
+    | "dark"
+    | "light"
+    | "system";
 
-  if (null === theme) theme = systemTheme;
+  let theme;
+
+  if ("system" === storageTheme) {
+    theme = systemTheme;
+  } else {
+    theme = storageTheme;
+  }
 
   const contentColor = theme === "dark" ? "#282828" : "#ffff";
 

@@ -10,9 +10,14 @@ function useTheme() {
   const onStorageChange = useCallback(() => {
     const newTheme = applyTheme(systemTheme);
     setTheme(newTheme);
+    const isSystemTheme = localStorage.getItem("theme-data") === "system";
+    setIsManuallyActivated(!isSystemTheme);
   }, [systemTheme]);
 
   useEffect(() => {
+    if (localStorage.getItem("theme-data") === null)
+      localStorage.setItem("theme-data", "system");
+
     const systemTheme = window?.matchMedia("(prefers-color-scheme: dark)")
       .matches
       ? "dark"
@@ -21,9 +26,8 @@ function useTheme() {
 
     setTheme(applyTheme(systemTheme));
 
-    const hasLocalStorage = localStorage.getItem("theme-data") !== null;
-
-    setIsManuallyActivated(hasLocalStorage);
+    const isSystemTheme = localStorage.getItem("theme-data") === "system";
+    setIsManuallyActivated(!isSystemTheme);
   }, []);
 
   useEffect(() => {
@@ -33,17 +37,15 @@ function useTheme() {
 
   const updateTheme = () => {
     if (localStorage.getItem("theme-data") === systemTheme)
-      localStorage.removeItem("theme-data");
+      localStorage.setItem("theme-data", "system");
     else {
       const nextTheme = theme === "dark" ? "light" : "dark";
       localStorage.setItem("theme-data", nextTheme);
 
       setTheme(applyTheme(systemTheme));
     }
-
-    const hasLocalStorage = localStorage.getItem("theme-data") !== null;
-
-    setIsManuallyActivated(hasLocalStorage);
+    const isSystemTheme = localStorage.getItem("theme-data") === "system";
+    setIsManuallyActivated(!isSystemTheme);
   };
 
   return {
