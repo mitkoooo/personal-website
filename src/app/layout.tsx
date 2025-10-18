@@ -35,6 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html
+      suppressContentEditableWarning
       lang="en"
       className={`${roboto.className} ${robotoMono.className} overflow-y-scroll antialiased`}
     >

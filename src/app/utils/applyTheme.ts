@@ -1,11 +1,23 @@
 "use client";
 
-export default function themeSetter(systemTheme: string | null) {
-  let theme = localStorage.getItem("theme-data");
+import { Theme } from "../types/theme";
 
-  if (null === theme) theme = systemTheme;
+export default function applyTheme(systemTheme: Theme): Theme {
+  const storageTheme = localStorage.getItem("theme-data") as
+    | "dark"
+    | "light"
+    | "system";
+
+  let theme;
+
+  if ("system" === storageTheme) {
+    theme = systemTheme;
+  } else {
+    theme = storageTheme;
+  }
 
   const contentColor = theme === "dark" ? "#282828" : "#ffff";
+
   document.documentElement.classList.add("pause-transitions");
 
   // Switch theme
