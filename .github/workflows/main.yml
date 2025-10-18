@@ -4,7 +4,6 @@ on: [push, pull_request]
 jobs:
   cypress-e2e:
     runs-on: ubuntu-latest
-    needs: lint
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,7 +29,6 @@ jobs:
   # Cypress Component Tests (commented out - add when ready)
   # cypress-component:
   #   runs-on: ubuntu-latest
-  #   needs: lint
   #   steps:
   #     - name: Checkout
   #       uses: actions/checkout@v4
@@ -52,7 +50,6 @@ jobs:
   # Vitest Unit Tests (commented out - add when ready)
   # vitest:
   #   runs-on: ubuntu-latest
-  #   needs: lint
   #   steps:
   #     - name: Checkout
   #       uses: actions/checkout@v4
@@ -71,7 +68,6 @@ jobs:
   # Storybook Tests (commented out - add when ready)
   # storybook:
   #   runs-on: ubuntu-latest
-  #   needs: lint
   #   steps:
   #     - name: Checkout
   #       uses: actions/checkout@v4
