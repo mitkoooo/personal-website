@@ -1,6 +1,6 @@
 # Personal portfolio
 
-Minimalist website portfolio that showcases my personal projects, experience in the industry, and tells a little bit about me as a person.
+Minimalist website portfolio that showcases my personal projects and tells a little bit about me as a person.
 
 [Visit the live site](https://vadimmitko.com)
 
@@ -44,7 +44,7 @@ To run this project locally:
 git clone https://github.com/mitkoooo/personal-website.git
 
 # Navigate into the project directory
-cd your-repo-name
+cd personal-website
 
 # Install dependencies
 bun install
