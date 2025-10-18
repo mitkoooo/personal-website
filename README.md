@@ -1,17 +1,58 @@
-# My website portfolio
+# Personal portfolio
 
 Minimalist website portfolio that showcases my personal projects, experience in the industry, and tells a little bit about me as a person.
 
-**Link to project:** [https://vadimmitko.com](https://vadimmitko.com)
+Visit the live site](https://vadimmitko.com)
 
 ![Portfolio](/public/portfolio.png)
 
-## How It's Made
+### Project Goals
 
-**Tech used:** React, TailwindCSS, MDX, TypeScript, Next-js
+The main objective of this project is to create a fast,
+lightweight, and maintainable personal portfolio that reflects
+both technical skill and design sensibility. By minimizing dependencies
+and focusing on static generation, the site delivers a responsive and smooth user experience.
 
-Home page uses Project Ladder component that makes use of Compound Component Pattern. Each other project page and 'About' page are written using MDX to reflect the 'Blog' style of my portfolio.
+### Tech Stack
 
-Overwhelming majority of pages in this project are static, allowing for faster initial loading speeds.
+- React
+- TailwindCSS
+- MDX
+- TypeScript
+- Nextjs
 
-Darkmode on this website is done without using any dependencies, relieving the dependency load on the initial JavaScript bundle that is being downloaded by the user
+### Features
+
+- **Project Ladder Component:** The home page uses a custom compound component pattern to display
+  projects in a modular and maintainable way.
+
+- **MDX-Powered Content:** All project and “About” pages are written in MDX to create a clean,
+  blog-style reading experience.
+
+- **Static Pages:** The majority of pages are statically generated to provide faster initial load times
+  and improved performance.
+
+- **Custom Dark Mode:** Dark mode is implemented without external dependencies,
+  reducing the JavaScript bundle size and improving loading speed.
+
+### Getting Started
+
+To run this project locally:
+
+````bash
+# Clone the repository
+git clone https://github.com/yourusername/your-repo-name.git
+
+# Navigate into the project directory
+cd your-repo-name
+
+# Install dependencies
+bun install
+
+# Start the development server
+bun run dev```
+
+### License
+
+This project is licensed under the MIT License.
+````
