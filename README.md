@@ -2,7 +2,7 @@
 
 Minimalist website portfolio that showcases my personal projects, experience in the industry, and tells a little bit about me as a person.
 
-Visit the live site](https://vadimmitko.com)
+[Visit the live site](https://vadimmitko.com)
 
 ![Portfolio](/public/portfolio.png)
 
@@ -41,7 +41,7 @@ To run this project locally:
 
 ````bash
 # Clone the repository
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/mitkoooo/personal-website.git
 
 # Navigate into the project directory
 cd your-repo-name
@@ -50,9 +50,9 @@ cd your-repo-name
 bun install
 
 # Start the development server
-bun run dev```
+bun run dev
+````
 
 ### License
 
 This project is licensed under the MIT License.
-````
